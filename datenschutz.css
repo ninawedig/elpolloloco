@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'zabras';
+    src: url('fonts/zabars/zabars.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    background-color: #a9cdd8;
+}
+
+.text-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 12px;
+    font-weight: 300;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+h1 {
+    font-family: 'zabras', 'sans-serif';
+    color: #994520;
+    font-size: 40px;
+    letter-spacing: 4px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+a {
+    color: #994520;
+}

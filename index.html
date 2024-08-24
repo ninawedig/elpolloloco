@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El pollo loco</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="icon" href="./img/img/favicon2.jpg">
+    <script src="models/drawable-object.class.js"></script>
+    <script src="models/movable-object.class.js"></script>
+    <script src="models/world.class.js"></script>
+    <script src="models/character.class.js"></script>
+    <script src="models/chicken.class.js"></script>
+    <script src="models/baby-chicken.class.js"></script>
+    <script src="models/clouds.class.js"></script>
+    <script src="models/coin.class.js"></script>
+    <script src="models/bottle.class.js"></script>
+    <script src="models/status-bar-energy.class.js"></script>
+    <script src="models/status-bar-coin.class.js"></script>
+    <script src="models/status-bar-bottle.class.js"></script>
+    <script src="models/status-bar-endboss.class.js"></script>
+    <script src="models/background-object.class.js"></script>
+    <script src="models/keyboard.class.js"></script>
+    <script src="models/level.class.js"></script>
+    <script src="models/throwable-object.class.js"></script>
+    <script src="models/endboss.class.js"></script>
+    <script src="js/game.js"></script>
+    <script src="levels/level1.js"></script>
+</head>
+
+<body>
+    <h1>El pollo loco</h1>
+    <div class="game">
+        <canvas width="720" height="480" id="canvas">
+        </canvas>
+        <button class="mutebutton-hide" id="mutebutton" onclick="toggleMute()"><img id="image-muted" class="image-muted"
+                src="./img/img/notmuted.png" alt=""></button>
+
+        <div class="mobile-controller-section">
+            <div class="mobile-controller-section-left">
+                <button id="button-left" class="button-mobile-controller"><img class="image-arrow"
+                        src="./img/img/left-arrow.png" alt=""></button>
+                <button id="button-right" class="button-mobile-controller"><img class="image-arrow"
+                        src="./img/img/right-arrow.png" alt=""></button>
+            </div>
+            <div class="mobile-controller-section-right">
+                <button id="button-up" class="button-mobile-controller"><img class="image-arrow"
+                        src="./img/img/up-arrow.png" alt=""></button>
+                <button id="button-bottle" class="button-mobile-controller"><img class="image-bottle"
+                        src="./img/img/6_salsa_bottle/salsa_bottle.png" alt=""></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="startscreen" id="startscreen">
+        <div class="button-section">
+            <button id="startbutton" class="startbutton" onclick="start()">Start Game</button>
+            <button id="playbutton" class="how-to-play-button" onclick="openHowToPlay()">How to Play</button>
+        </div>
+        <div class="link-section" id="linksection">
+            <span class="link" onclick="openImpressum()">Impressum</span>
+            <span class="link" onclick="openDatenschutz()">Datenschutz</span>
+        </div>
+    </div>
+
+    <div class="endscreen-hide" id="endscreen">
+        <button id="restartbutton" class="restartbutton-hide" onclick="restartGame()">Restart Game</button>
+    </div>
+
+    <div id="rotate-warning" class="rotate-warning" onclick="hideRotateWarning()"></div>
+
+    <div id="howToPlay" class="how-to-play-hide" onclick="closeHowToPlay()">
+        <span>Run: Arrows left and right</span>
+        <span>Jump: D</span>
+        <span>Throw bottle: X</span>
+    </div>
+</body>
+
+</html>

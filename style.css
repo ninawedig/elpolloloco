@@ -1,0 +1,393 @@
+@font-face {
+    font-family: 'zabras';
+    src: url('fonts/zabars/zabars.ttf') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #a9cdd8;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 64px;
+    letter-spacing: 6px;
+    color: #994520;
+    text-shadow: 4px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.how-to-play-hide {
+    display: none;
+}
+
+.how-to-play-shown {
+    position: absolute;
+    z-index: 3;
+    width: 720px;
+    height: 480px;
+    margin-top: 150px;
+    filter: blur();
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    font-size: 26px;
+    letter-spacing: 4px;
+    color: #994520;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+canvas {
+    background-color: black;
+    display: block;
+}
+
+button {
+    background-color: rgb(253, 228, 140);
+    color: #994520;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    letter-spacing: 4px;
+    border-radius: 8px;
+    border: 2px solid white;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.startscreen {
+    position: absolute;
+    margin-top: 150px;
+    z-index: 2;
+    height: 481px;
+    width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 70%;
+    background-size: 100% 100%;
+    background-image: url('./img/img/9_intro_outro_screens/start/startscreen_1.png');
+}
+
+.endscreen-losing-shown {
+    position: absolute;
+    margin-top: 150px;
+    z-index: 3;
+    height: 481px;
+    width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-size: 100% 100%;
+    background-image: url('./img/img/9_intro_outro_screens/game_over/you\ lost.png');
+}
+
+.endscreen-winning-shown {
+    position: absolute;
+    margin-top: 150px;
+    z-index: 3;
+    height: 481px;
+    width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-size: 100% 100%;
+    background-image: url('./img/img/9_intro_outro_screens/game_over/game\ over.png');
+}
+
+.rotate-warning {
+    display: none;
+    position: absolute;
+    margin-top: 150px;
+    top: 0;
+    left: 0;
+    width: 720px;
+    height: 480px;
+    z-index: 10;
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    background-image: url('./img/img/turn-display.png');
+}
+
+.button-section {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.link-section {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    color: rgb(160, 35, 31);
+    text-decoration: none;
+}
+
+.endscreen-hide {
+    display: none;
+}
+
+.startbutton {
+    width: 200px;
+    cursor: pointer;
+}
+
+.how-to-play-button {
+    width: 200px;
+    cursor: pointer;
+}
+
+.restartbutton-shown {
+    width: 220px;
+    cursor: pointer;
+}
+
+.game {
+    width: 720px;
+    height: 480px;
+    position: relative;
+}
+
+.mutebutton-shown {
+    position: absolute;
+    top: 50px;
+    right: 15px;
+    z-index: 1;
+    height: 40px;
+    width: 40px;
+    background-color: #FBD757;
+    border-radius: 50%;
+    padding: 5px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mutebutton-hide {
+    display: none;
+}
+
+.playbutton-shown {
+    position: absolute;
+    top: 100px;
+    right: 15px;
+    z-index: 1;
+    height: 40px;
+    width: 40px;
+    background-color: #FBD757;
+    border-radius: 50%;
+    padding: 5px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playbutton-hide {
+    display: none;
+}
+
+.button-mobile-controller {
+    height: 40px;
+    width: 40px;
+    background-color: #FBD757;
+    border-radius: 50%;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    text-align: center;
+}
+
+.mobile-controller-section {
+    display: none;
+}
+
+.mobile-controller-section-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.mobile-controller-section-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.image-bottle {
+    height: 30px;
+    width: 30px;
+}
+
+.image-arrow {
+    height: 16px;
+    width: 16px;
+    filter: invert(100%) sepia(0%) saturate(7482%) hue-rotate(80deg) brightness(98%) contrast(106%);
+}
+
+.image-muted {
+    height: 20px;
+    width: 20px;
+    filter: invert(100%) sepia(0%) saturate(7482%) hue-rotate(80deg) brightness(98%) contrast(106%);
+}
+
+.image-play {
+    height: 20px;
+    width: 20px;
+    filter: invert(100%) sepia(0%) saturate(7482%) hue-rotate(80deg) brightness(98%) contrast(106%);
+}
+
+.link {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+    .mobile-controller-section {
+        width: 100%;
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media only screen and (max-width: 915px) {
+    .game {
+        width: 100vw;
+        height: calc(100vw * 480 / 915);
+    }
+
+    canvas {
+        width: 100vw;
+        height: calc(100vw * 480 / 915);
+    }
+
+    .how-to-play-shown {
+        width: 100%;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    .startscreen {
+        width: 100vw;
+        height: calc(100vw * 480 / 915);
+        max-width: 915px;
+        margin-top: 0;
+    }
+
+    .how-to-play-shown {
+        width: 100vw;
+        height: calc(100vw * 480 / 915);
+        max-width: 915px;
+        margin-top: 0;
+    }
+
+    .endscreen-shown {
+        width: 100vw;
+        height: calc(100vw * 480 / 915);
+        max-width: 915px;
+        margin-top: 0;
+    }
+
+    .endscreen-losing-shown {
+        width: 100vw;
+        height: calc(100vw * 480 / 915);
+        max-width: 915px;
+        margin-top: 0;
+    }
+
+    .endscreen-winning-shown {
+        width: 100vw;
+        height: calc(100vw * 480 / 915);
+        max-width: 915px;
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .how-to-play-button {
+        width: 150px;
+    }
+
+    .startbutton {
+        width: 150px;
+    }
+
+    .restartbutton-shown {
+        width: 170px;
+    }
+
+    .link-section {
+        font-size: 8px;
+    }
+
+    button {
+        font-size: 20px;
+    }
+
+    .how-to-play-shown {
+        font-size: 20px;
+    }
+
+    .rotate-warning {
+        display: flex;
+        width: 100vw;
+        height: calc(100vw * 480 / 915);
+        max-width: 720px;
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    .game {
+        height: 100vh;
+    }
+
+    canvas {
+        height: 100vh;
+    }
+
+    .startscreen {
+        height: 100vh;
+    }
+
+    .how-to-play-shown {
+        height: 100vh;
+    }
+
+    .endscreen-shown {
+        height: 100vh;
+    }
+}
